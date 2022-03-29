@@ -46,8 +46,7 @@
       "prettier . --write",
       "yarn prettify"
     ],
-    "*.{js,css,md}": "prettier --write",
-    "*.{js}": "eslint --cache --fix"
+    "*.{js,css,md}": "prettier --write"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
