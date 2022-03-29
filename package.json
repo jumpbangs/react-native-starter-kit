@@ -43,8 +43,7 @@
     "*.{js,jsx}": [
       "eslint .",
       "eslint . --fix",
-      "prettier . --write",
-      "yarn prettify"
+      "prettier . --write"
     ],
     "*.{js,css,md}": "prettier --write"
   },
