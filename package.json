@@ -9,7 +9,8 @@
     "lint:fix": "eslint --fix .",
     "android": "react-native run-android",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.8",
