@@ -1,8 +1,4 @@
-import {
-  LOGIN_USER,
-  LOGIN_USER_FAIL,
-  LOGIN_USER_SUCCESS,
-} from '../../actions/userAction';
+import { LOGIN_USER, LOGIN_USER_FAIL, LOGIN_USER_SUCCESS } from '../../actions/userAction';
 
 const INITIAL_STATE = {
   user: {},
