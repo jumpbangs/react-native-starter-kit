@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "precommit": "lint-staged",
     "test": "jest",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "lint:fix": "eslint --fix .",
     "android": "react-native run-android",
-    "lint": "eslint --ext .js --ignore-path .gitignore ."
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.8",
@@ -20,8 +20,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-react-native": "^4.0.0",
-    "lint-staged": "^12.3.7",
-    "prettier": "^2.6.1",
+    "lint-staged": ">=10",
     "react": "17.0.2",
     "react-native": "0.67.3",
     "react-native-blob-util": "^0.14.1",
@@ -39,11 +38,6 @@
     "redux-promise-middleware": "^6.1.2",
     "redux-thunk": "^2.4.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint .",
@@ -51,7 +45,8 @@
       "prettier . --write",
       "yarn prettify",
       "git add"
-    ]
+    ],
+    "*.{js,css,md}": "prettier --write"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -62,6 +57,7 @@
     "husky": "^7.0.4",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "^2.6.1",
     "react-test-renderer": "17.0.2"
   },
   "jest": {
