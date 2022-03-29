@@ -44,8 +44,7 @@
       "eslint .",
       "eslint . --fix",
       "prettier . --write",
-      "yarn prettify",
-      "git add"
+      "yarn prettify"
     ],
     "*.{js,css,md}": "prettier --write",
     "*.js": "eslint --cache --fix"
