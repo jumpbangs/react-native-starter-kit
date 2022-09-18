@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import SplashScreen from 'react-native-splash-screen';
+import RNBootSplash from 'react-native-bootsplash';
 import { PersistGate } from 'redux-persist/integration/react';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -13,22 +13,22 @@ import { store, persistor } from './src/store/configure';
  */
 const App = () => {
   //Initialize SplashScreen
-  React.useEffect(() => {
-    SplashScreen.show();
-    const timeOut = setTimeout(() => {
-      SplashScreen.hide();
-    }, 2000);
+  // React.useEffect(() => {
+  //   const init = async () => {
+  //     // …do multiple sync or async tasks
+  //   };
 
-    return () => {
-      clearTimeout(timeOut);
-    };
-  }, []);
+  //   init().finally(async () => {
+  //     await RNBootSplash.hide({ fade: true });
+  //     console.log('Bootsplash has been hidden successfully');
+  //   });
+  // }, []);
 
   return (
     <SafeAreaProvider>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <NavigationContainer>
+          <NavigationContainer onReady={() => RNBootSplash.hide()}>
             <RootStack />
           </NavigationContainer>
         </PersistGate>
