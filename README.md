@@ -27,5 +27,5 @@
 #### UI features
 
 - [x] react-native-elements
-- [x] react-native-splash-screen
+- [x] react-native-bootsplash
 - [x] react-native-toast-message
