@@ -1,13 +1,14 @@
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import promise from 'redux-promise-middleware';
+import { configureStore } from '@reduxjs/toolkit';
+import { compose, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
-import { createStore, compose, applyMiddleware } from 'redux';
 import FilesystemStorage from 'redux-persist-filesystem-storage';
 
 import config from '../configs/config';
 import * as env from '../constants/env';
-import rootReducer from '../reducers/index';
+import rootReducer from '../features/index';
 
 let enhancers;
 
@@ -26,9 +27,14 @@ const persistConfig = {
   storage: FilesystemStorage,
   whitelist: [],
 };
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = createStore(persistedReducer, compose(...enhancers));
+const store = configureStore({
+  reducer: persistedReducer,
+  enhancers: compose(...enhancers),
+});
+
 const persistor = persistStore(store);
 
 export { store, persistor, persistReducer };
