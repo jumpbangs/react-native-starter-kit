@@ -1,0 +1,9 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "lib": [
+      "es2018",
+      "DOM" // 👈️ Add this
+    ]
+  }
+}
