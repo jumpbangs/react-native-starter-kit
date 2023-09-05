@@ -1,5 +1,8 @@
 module.exports = {
   root: true,
+  env: {
+    es6: true,
+  },
   extends: ['@react-native', 'plugin:react/recommended', 'prettier'],
   parserOptions: {
     ecmaFeatures: {
