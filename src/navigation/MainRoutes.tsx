@@ -1,9 +1,10 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { ROUTES } from './RoutesConstant';
 import HomePage from '@screen/HomePage';
 import ListPage from '@screen/ListPage';
+
+import { ROUTES } from './RoutesConstant';
 
 const Stack = createNativeStackNavigator();
 

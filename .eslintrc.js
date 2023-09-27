@@ -12,7 +12,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'react-native', 'react-hooks'],
+  plugins: ['react', 'react-native', 'react-hooks', 'simple-import-sort'],
   settings: { react: { version: 'detect' } },
   rules: {
     // allow .js files to contain JSX code
@@ -28,6 +28,28 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': ['error', { ignore: ['navigation'] }],
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // Packages `react` related packages come first.
+          ['^react', '^@?\\w'],
+          // Internal packages.
+          ['^(@|components)(/.*|$)'],
+          // Internal packages.
+          ['^(@screen|@navigation)(/.*|$)'],
+          // Side effect imports.
+          ['^\\u0000'],
+          // Parent imports. Put `..` last.
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          // Style imports.
+          ['^.+\\.?(css)$'],
+        ],
+      },
+    ],
+    'simple-import-sort/exports': 'error',
     'require-jsdoc': [
       'error',
       {

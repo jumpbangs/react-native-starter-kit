@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistReducer, persistStore } from 'redux-persist';
 import FilesystemStorage from 'redux-persist-filesystem-storage';
 
 import rootReducer from '../features/index';
@@ -19,4 +19,4 @@ const store = configureStore({
 
 const persistor = persistStore(store);
 
-export { store, persistor, persistReducer };
+export { persistor, persistReducer, store };
