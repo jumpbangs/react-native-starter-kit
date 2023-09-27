@@ -1,9 +1,12 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
-    "lib": [
-      "es2018",
-      "DOM" // 👈️ Add this
-    ]
-  }
+    "lib": ["es2018", "DOM"],
+    "baseUrl": "./src/",
+    "paths": {
+      "@screen/*": ["screen/*"],
+      "@navigation/*": ["navigation/*"]
+    }
+  },
+  "include": ["src", "**/*.ts", "**/*.tsx"]
 }
