@@ -14,7 +14,7 @@ const NO_HEADER_OPTIONS = {
 
 const MainRoutes = () => {
   return (
-    <Stack.Navigator initialRouteName={ROUTES.HOME}>
+    <Stack.Navigator>
       <Stack.Screen name={ROUTES.HOME} component={HomePage} options={NO_HEADER_OPTIONS} />
       <Stack.Screen name={ROUTES.LIST_PAGE} component={ListPage} />
     </Stack.Navigator>

@@ -16,6 +16,7 @@ module.exports = {
   settings: { react: { version: 'detect' } },
   rules: {
     // allow .js files to contain JSX code
+    'no-duplicate-imports': 'error',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx', '.ts'] }],
     'no-alert': 'off',
     'eol-last': 'error',
@@ -37,7 +38,7 @@ module.exports = {
           // Internal packages.
           ['^(@|components)(/.*|$)'],
           // Internal packages.
-          ['^(@screen|@navigation)(/.*|$)'],
+          ['^(@screen|@navigation|@constants)(/.*|$)'],
           // Side effect imports.
           ['^\\u0000'],
           // Parent imports. Put `..` last.

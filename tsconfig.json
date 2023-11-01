@@ -5,7 +5,8 @@
     "baseUrl": "./src/",
     "paths": {
       "@screen/*": ["screen/*"],
-      "@navigation/*": ["navigation/*"]
+      "@navigation/*": ["navigation/*"],
+      "@styles/*": ["styles/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"]

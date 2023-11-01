@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import 'react-native-gesture-handler';
+
 import RootStack from './src/RootStack';
 import { persistor, store } from './src/store/configure';
 
